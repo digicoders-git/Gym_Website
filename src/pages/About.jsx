@@ -117,12 +117,12 @@ const About = () => {
             <div className="absolute left-1/2 -translate-x-1/2 w-[2px] h-full bg-gray-200 hidden md:block"></div>
 
             <div className="space-y-24">
-              {/* Year 2010 */}
+              {/* Year 2024 */}
               <div className="relative flex flex-col md:flex-row items-center justify-between">
                 <div className="w-full md:w-[45%] text-center md:text-right">
-                  <h4 className="text-4xl md:text-5xl font-black text-black mb-4 tracking-tighter">2010</h4>
-                  <h5 className="text-2xl font-bold text-black mb-4 uppercase">The First Rep</h5>
-                  <p className="text-gray-600">Opened our first 500 sq. ft facility with nothing but iron weights and a dream to change the fitness game in our city.</p>
+                  <h4 className="text-4xl md:text-5xl font-black text-black mb-4 tracking-tighter">2024</h4>
+                  <h5 className="text-2xl font-bold text-black mb-4 uppercase">Digital Revolution</h5>
+                  <p className="text-gray-600">Launched our high-tech tracking app and AI-driven nutrition plans, bridging the gap between iron and technology.</p>
                 </div>
                 <div className="w-8 h-8 bg-[#DB5726] rounded-full z-10 hidden md:block"></div>
                 <div className="w-full md:w-[45%]"></div>
@@ -139,12 +139,12 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Year 2024 */}
+              {/* Year 2010 */}
               <div className="relative flex flex-col md:flex-row items-center justify-between">
                 <div className="w-full md:w-[45%] text-center md:text-right">
-                  <h4 className="text-4xl md:text-5xl font-black text-black mb-4 tracking-tighter">2024</h4>
-                  <h5 className="text-2xl font-bold text-black mb-4 uppercase">Digital Revolution</h5>
-                  <p className="text-gray-600">Launched our high-tech tracking app and AI-driven nutrition plans, bridging the gap between iron and technology.</p>
+                  <h4 className="text-4xl md:text-5xl font-black text-black mb-4 tracking-tighter">2010</h4>
+                  <h5 className="text-2xl font-bold text-black mb-4 uppercase">The First Rep</h5>
+                  <p className="text-gray-600">Opened our first 500 sq. ft facility with nothing but iron weights and a dream to change the fitness game in our city.</p>
                 </div>
                 <div className="w-8 h-8 bg-[#DB5726] rounded-full z-10 hidden md:block"></div>
                 <div className="w-full md:w-[45%]"></div>
