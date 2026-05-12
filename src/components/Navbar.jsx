@@ -77,44 +77,66 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
-                  location.pathname === link.path
-                    ? 'text-white bg-orange-600'
-                    : 'text-gray-700 hover:bg-orange-50 hover:text-orange-600'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            {/* Mobile Contact Button */}
-            <div className="grid grid-cols-2 gap-2 mt-4 px-3">
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="text-center px-3 py-3 rounded-md text-sm font-bold text-orange-600 border-2 border-orange-600 hover:bg-orange-600 hover:text-white transition-colors"
-              >
-                Contact
-              </Link>
-              <Link
-                to="/join"
-                onClick={() => setIsOpen(false)}
-                className="text-center px-3 py-3 rounded-md text-sm font-bold text-white bg-orange-600 hover:bg-orange-700 transition-colors shadow-md"
-              >
-                Join Now
-              </Link>
-            </div>
-          </div>
+      {/* Mobile Sidebar Overlay */}
+      <div
+        className={`fixed inset-0 z-[9998] bg-black/50 transition-opacity duration-300 md:hidden ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Mobile Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-72 bg-white z-[9999] shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        {/* Sidebar Header */}
+        <div className="flex items-center justify-between px-6 h-20 border-b border-gray-100">
+          <Link to="/" onClick={() => setIsOpen(false)}>
+            <img src="/logo.png" alt="Gym Logo" className="h-12 w-auto object-contain mix-blend-multiply" />
+          </Link>
+          <button onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-orange-500">
+            <X className="h-7 w-7" />
+          </button>
         </div>
-      )}
+
+        {/* Sidebar Links */}
+        <div className="px-4 py-6 space-y-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              onClick={() => setIsOpen(false)}
+              className={`block px-4 py-3 rounded-md text-base font-semibold transition-colors ${
+                location.pathname === link.path
+                  ? 'text-white bg-orange-600'
+                  : 'text-gray-700 hover:bg-orange-50 hover:text-orange-600'
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* Sidebar Buttons */}
+        <div className="px-4 grid grid-cols-2 gap-3">
+          <Link
+            to="/contact"
+            onClick={() => setIsOpen(false)}
+            className="text-center px-3 py-3 rounded-md text-sm font-bold text-orange-600 border-2 border-orange-600 hover:bg-orange-600 hover:text-white transition-colors"
+          >
+            Contact
+          </Link>
+          <Link
+            to="/join"
+            onClick={() => setIsOpen(false)}
+            className="text-center px-3 py-3 rounded-md text-sm font-bold text-white bg-orange-600 hover:bg-orange-700 transition-colors shadow-md"
+          >
+            Join Now
+          </Link>
+        </div>
+      </div>
     </nav>
   );
 };
